@@ -9,7 +9,7 @@ export default function LandingHero() {
     offset: ["start start", "end start"],
   });
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
-  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "300%"]);
+  const textY = useTransform(scrollYProgress, [0, 1], ["0%", "400%"]);
 
   return (
     <div

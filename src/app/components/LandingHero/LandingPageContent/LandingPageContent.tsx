@@ -1,21 +1,35 @@
+import Link from "next/link";
+
 export default function LandingPageContent() {
   return (
     <div>
-      <div className="min-h-screen flex justify-center items-center bg-strawberry bg-fixed bg-no-repeat bg-cover">
-        <h2>Parallax</h2>
+      <div className="min-h-screen flex justify-center items-center bg-center bg-pineapple bg-fixed bg-no-repeat bg-cover">
+        <h2 className="text-orange-500 font-bold text-4xl">
+          Summer is right around the corner
+        </h2>
       </div>
-      <div className="p-10">
-        <h2 className="font-bold text-4xl">Sample section</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-          aliquid placeat eius deleniti sed maxime assumenda ipsa dignissimos
-          similique. Id hic recusandae eaque facilis nam atque necessitatibus
-          minus consequatur doloribus similique temporibus ex ratione magnam
-          distinctio eius ipsam nulla, accusamus iure. Numquam rerum distinctio
-          modi possimus beatae necessitatibus minima similique!
-        </p>
+      <div className="min-h-screen flex justify-center items-center bg-center bg-banana bg-fixed bg-no-repeat bg-cover">
+        <div className="p-10">
+          <h2 className="font-bold text-4xl text-center">
+            Are you ready to beat the heat?
+          </h2>
+        </div>
       </div>
-      <div className="min-h-screen flex justify-center items-center bg-banana bg-fixed bg-no-repeat bg-cover"></div>
+      <div className="min-h-screen flex justify-center items-center bg-center bg-strawberry bg-fixed bg-no-repeat bg-cover">
+        <div className="p-10">
+          <h2 className="font-bold text-4xl text-center">
+            Do you crave more smoothie inspiration?
+          </h2>
+        </div>
+      </div>
+      <div className="min-h-screen flex justify-center items-center bg-center bg-multiColorSmoothie bg-fixed bg-no-repeat bg-cover">
+        <Link
+          href={"/home"}
+          className="text-3xl bg-pink-400 rounded p-5 hover:bg-yellow-400"
+        >
+          Get inspired
+        </Link>
+      </div>
     </div>
   );
 }
