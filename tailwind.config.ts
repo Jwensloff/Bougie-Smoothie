@@ -28,6 +28,9 @@ const config: Config = {
         berries:
           'url("https://images.pexels.com/photos/1120575/pexels-photo-1120575.jpeg")',
       },
+      fontFamily: {
+        h1: ["Boogaloo"],
+      },
     },
   },
   plugins: [],

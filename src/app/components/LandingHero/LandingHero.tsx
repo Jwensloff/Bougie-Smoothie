@@ -17,8 +17,8 @@ export default function LandingHero() {
       className="w-full h-screen overflow-hidden relative grid place-items-center"
     >
       <motion.h1
-        style={{ y: textY }}
-        className="font-bold mb-[20rem] text-white text-7xl md:text-9xl relative z-10"
+        style={{ y: textY, rotate: "-8deg"  }}
+        className="font-bold font-h1 mb-[20rem] text-white text-7xl rotate-45 md:text-9xl relative z-10 "
       >
         Bougie Smoothie
       </motion.h1>
