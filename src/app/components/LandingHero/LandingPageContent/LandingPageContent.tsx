@@ -44,20 +44,23 @@ export default function LandingPageContent() {
         </div>
         <div className="min-h-screen flex justify-center items-center bg-center bg-pineapple bg-fixed bg-no-repeat bg-cover">
           <div className="min-h-screen flex justify-center items-center w-[100%]">
-            <div className="text-blue-500 font-bold text-4xl rounded p-10 w-[80%] flex gap-5">
-              <FontAwesomeIcon icon={faCalendarDays} size="5x" />
-              <div className="flex flex-col justify-center">
-                <div>
-                  <span>{days}</span> <span>Days</span>
-                </div>
-                <div>
-                  <span>{hours}</span> <span>Hours</span>
-                </div>
-                <div>
-                  <span>{minutes}</span> <span>Minutes</span>
-                </div>
-                <div>
-                  <span>{seconds}</span> <span>Seconds</span>
+            <div className="min-h-screen flex flex-col justify-center items-left w-[90%] text-blue-500 font-bold text-4xl ">
+              <h2 className="p-l-10">Countdown to summer 2024:</h2>
+              <div className="p-10 w-[100%] flex gap-5">
+                <FontAwesomeIcon icon={faCalendarDays} size="5x" />
+                <div className="flex flex-col justify-center">
+                  <div>
+                    <span>{days}</span> <span>Days</span>
+                  </div>
+                  <div>
+                    <span>{hours}</span> <span>Hours</span>
+                  </div>
+                  <div>
+                    <span>{minutes}</span> <span>Minutes</span>
+                  </div>
+                  <div>
+                    <span>{seconds}</span> <span>Seconds</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -90,7 +93,7 @@ export default function LandingPageContent() {
           href={"/home"}
           className="text-3xl text-white bg-orange-600 rounded p-5 hover:bg-pink-600"
         >
-          Get inspired
+          Explore recipes
         </Link>
       </div>
     </div>
