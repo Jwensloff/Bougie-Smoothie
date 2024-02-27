@@ -1,6 +1,6 @@
-import LandingHero from "./components/LandingHero/LandingHero";
+import LandingHero from "../components/LandingHero/LandingHero";
 import { Inter } from "next/font/google";
-import LandingPageContent from "./components/LandingHero/LandingPageContent/LandingPageContent";
+import LandingPageContent from "../components/LandingPageContent/LandingPageContent";
 
 const inter = Inter({ subsets: ["latin"] });
 
