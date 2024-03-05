@@ -3,9 +3,11 @@ import { faBars, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 export default function Header() {
+  const pathname = usePathname();
   const smoothieTypes = [
     { type: "Berry", href: "/berry-recipes" },
     { type: "Tropical", href: "/tropical-recipes" },
@@ -17,9 +19,8 @@ export default function Header() {
   let [open, setOpen] = useState(false);
 
   return (
-    <div className="shadow-md w-full fixed top-0 left-0">
-      <div className="md:flex items-center justify-between bg-white py-4 md:px-10 px-7">
-        {/* logo section */}
+    <div className="shadow-md w-full fixed top-0 left-0 ">
+      <div className="md:flex items-center bg-orange-500 justify-between bg-white py-4 md:px-10 px-7">
         <div className="flex justify-between items-center">
           <div className="cursor-pointer">
             <Image
@@ -29,7 +30,6 @@ export default function Header() {
               width={70}
             />
           </div>
-          {/* Menu icon */}
           <div
             onClick={() => setOpen(!open)}
             className="cursor-pointer md:hidden w-7 h-7"
@@ -41,32 +41,31 @@ export default function Header() {
             )}
           </div>
         </div>
-        {/* linke items */}
         <ul
-          className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
+          className={`md:flex bg-orange-500 md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${
             open ? "top-15" : "top-[-490px]"
           }`}
         >
           {smoothieTypes.map((link) => (
             <li className="md:ml-8 md:my-0 my-7 font-semibold" key={link.type}>
-              <a
+              {/* <Link
                 href={link.href}
-                className="flex text-center text-gray-800 hover:text-blue-400 duration-300"
+                className="text-purple-800 text-xl hover:text-blue-500 hover:underline duration-300 "
+              > */}
+
+              <Link
+                href={link.href}
+                className={`${pathname === link.href ? "underline" : ""} px-5 py-2.5 relative rounded group overflow-hidden font-medium bg-orange-200 text-purple-700 inline-block`}
               >
-                {link.type}
-              </a>
+                <span className="bg-orange-500 absolute top-0 left-0 flex w-full h-0 mb-0 transition-all duration-200 ease-out transform translate-y-0 bg-purple-600 group-hover:h-full opacity-90 "></span>
+                <span className="relative group-hover:text-white">
+                  {link.type}
+                </span>
+              </Link>
             </li>
           ))}
         </ul>
       </div>
     </div>
   );
-}
-
-{
-  /* <header className="p-[1rem] flex justify-between w-full items-center mx-auto">
-<div className="md:static absolute md:min-h-fit bg-white min-h-[60vh] md:width-auto left-0 top-[-100%] w-full flex items-center ">
-  <div className="flex md:flex-row flex-col">{btns}</div>
-</div>
-</header> */
 }
